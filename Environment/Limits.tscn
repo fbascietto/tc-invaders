@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv8nqn26byq8a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8hih"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_joibr"]
+specular_color = Color(0.370364, 0.370364, 0.370364, 1)
+specular_shininess = 0.53
+
+[node name="Limits" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c8hih")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = SubResource("CanvasTexture_joibr")

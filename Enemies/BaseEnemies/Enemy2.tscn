@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcym473i1tnde"]
+
+[ext_resource type="Texture2D" uid="uid://cpoio6rw42idr" path="res://Assets/Sprites/Invaders/space__0002_B1.png" id="1_o0g37"]
+[ext_resource type="Script" path="res://Enemies/BaseEnemies/enemy.gd" id="1_qqau3"]
+[ext_resource type="Texture2D" uid="uid://bg64nuviwhe3i" path="res://Assets/Sprites/Invaders/space__0003_B2.png" id="2_03an5"]
+[ext_resource type="PackedScene" uid="uid://brjbcawyqu0ds" path="res://Enemies/BaseEnemies/Lasers/Laser.tscn" id="2_mkar1"]
+[ext_resource type="Texture2D" uid="uid://dwjc023v7cvt0" path="res://Assets/Sprites/Invaders/space__0009_EnemyExplosion.png" id="2_rkkj5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5hv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkkj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rkkj5")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o0g37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_03an5")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ykx5"]
+size = Vector2(22, 16)
+
+[node name="Enemy2" type="CharacterBody2D"]
+script = ExtResource("1_qqau3")
+laser_particle_scene = ExtResource("2_mkar1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y5hv5")
+animation = &"Move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ykx5")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.6

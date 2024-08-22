@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://blvna5d8yx6qg"]
+
+[ext_resource type="PackedScene" uid="uid://b810igklh33dv" path="res://Environment/Shelter/Quadrants/TopRightQuadrant.tscn" id="1_0yi1l"]
+[ext_resource type="PackedScene" uid="uid://d4cinsaxy57kw" path="res://Environment/Shelter/Quadrants/CenterQuadrant.tscn" id="2_8jyfr"]
+[ext_resource type="PackedScene" uid="uid://dcw0iborou5om" path="res://Environment/Shelter/Quadrants/TopLeftQuadrant.tscn" id="3_c5b5r"]
+[ext_resource type="PackedScene" uid="uid://b0w7dgi4t0j13" path="res://Environment/Shelter/Quadrants/BottomQuadrant.tscn" id="4_l32my"]
+[ext_resource type="PackedScene" uid="uid://dixxw53jlh3lh" path="res://Environment/Shelter/Quadrants/BottomLeftQuadrant.tscn" id="5_h2f36"]
+[ext_resource type="PackedScene" uid="uid://ckt3lxn1ji2v8" path="res://Environment/Shelter/Quadrants/BottomRightQuadrant.tscn" id="6_3ssno"]
+
+[node name="Shelter" type="Node2D"]
+position = Vector2(16, -8)
+
+[node name="TopRightQuadrant" parent="." instance=ExtResource("1_0yi1l")]
+position = Vector2(-2, 0)
+
+[node name="CenterQuadrant" parent="." instance=ExtResource("2_8jyfr")]
+position = Vector2(-15, 0)
+
+[node name="TopLeftQuadrant" parent="." instance=ExtResource("3_c5b5r")]
+position = Vector2(-30, 0)
+
+[node name="BottomQuadrant" parent="." instance=ExtResource("4_l32my")]
+position = Vector2(-15, 16)
+
+[node name="BottomLeftQuadrant" parent="." instance=ExtResource("5_h2f36")]
+position = Vector2(-30, 16)
+
+[node name="BottomRightQuadrant" parent="." instance=ExtResource("6_3ssno")]
+position = Vector2(-1, 16)

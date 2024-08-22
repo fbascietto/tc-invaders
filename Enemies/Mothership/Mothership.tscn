@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu3sr2e8bsu5h"]
+
+[ext_resource type="Script" path="res://Enemies/Mothership/mothership.gd" id="1_00ygs"]
+[ext_resource type="Texture2D" uid="uid://cgsbeg7isp42g" path="res://Assets/Sprites/Invaders/space__0007_UFO.png" id="1_okpdc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fswe"]
+size = Vector2(48, 20)
+
+[node name="Mothership" type="CharacterBody2D"]
+script = ExtResource("1_00ygs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_okpdc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7fswe")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.6

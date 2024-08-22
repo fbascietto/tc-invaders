@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://8wxqb4n6ovtc"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_yogqn"]
+[ext_resource type="PackedScene" uid="uid://d4a3k02tp748q" path="res://Player/Projectile/Projectile.tscn" id="2_0mrn2"]
+[ext_resource type="Texture2D" uid="uid://ber7m0atf81wf" path="res://Assets/Sprites/Invaders/space__0006_Player.png" id="2_tqfpl"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_yogqn")
+laser_particle_scene = ExtResource("2_0mrn2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13, 8, -13, 0, -11, 0, -11, -2, -3, -2, -3, -6, -2, -6, -1, -6, -1, -8, 1, -8, 1, -6, 3, -6, 3, -2, 11, -2, 11, 0, 13, 0, 13, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tqfpl")
+
+[node name="ShootDelay" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.6
+
+[connection signal="timeout" from="ShootDelay" to="." method="_on_shoot_delay_timeout"]

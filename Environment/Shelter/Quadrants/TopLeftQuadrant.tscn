@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcw0iborou5om"]
+
+[ext_resource type="Texture2D" uid="uid://bh88x8pq1rl6s" path="res://Assets/Sprites/Shelter/barrier_top_left.png" id="1_fo5dy"]
+[ext_resource type="Script" path="res://Environment/Shelter/Quadrants/quadrant.gd" id="1_xdjbd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3fsd"]
+atlas = ExtResource("1_fo5dy")
+region = Rect2(15, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84o2b"]
+atlas = ExtResource("1_fo5dy")
+region = Rect2(30, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o531o"]
+atlas = ExtResource("1_fo5dy")
+region = Rect2(45, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_147bf"]
+atlas = ExtResource("1_fo5dy")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6veca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3fsd")
+}],
+"loop": true,
+"name": &"dmg1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84o2b")
+}],
+"loop": true,
+"name": &"dmg2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o531o")
+}],
+"loop": true,
+"name": &"dmg3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_147bf")
+}],
+"loop": true,
+"name": &"safe",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpuur"]
+size = Vector2(14, 16)
+
+[node name="TopLeftQuadrant" type="Area2D"]
+script = ExtResource("1_xdjbd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6veca")
+animation = &"safe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lpuur")
