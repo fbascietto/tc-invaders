@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpuur"]
-size = Vector2(14, 16)
+size = Vector2(16, 16)
 
 [node name="TopLeftQuadrant" type="Area2D"]
 script = ExtResource("1_xdjbd")

@@ -1,7 +1,6 @@
 extends Area2D
-
+class_name Projectile
 @export var speed: float = 400.0
-var iName = 'projectile'
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))

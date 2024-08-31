@@ -39,6 +39,7 @@ script = ExtResource("1_qqau3")
 laser_particle_scene = ExtResource("2_mkar1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.690196, 0.513726, 1)
 sprite_frames = SubResource("SpriteFrames_y5hv5")
 animation = &"Move"
 

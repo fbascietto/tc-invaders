@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp36m6iqluubw"]
+
+[ext_resource type="FontFile" uid="uid://d1vavy75c6vnm" path="res://Assets/space_invaders.ttf" id="1_lusli"]
+
+[sub_resource type="Animation" id="Animation_e8q7u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Incoming/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Incoming transmission..."]
+}
+
+[sub_resource type="Animation" id="Animation_mgaum"]
+resource_name = "transmission"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Incoming/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667, 0.966667, 1.46667, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Incoming transmission.", "Incoming transmission..", "Incoming transmission...", "Incoming transmission....", "Incoming transmission"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8s0j"]
+_data = {
+"RESET": SubResource("Animation_e8q7u"),
+"transmission": SubResource("Animation_mgaum")
+}
+
+[node name="Incoming" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_v8s0j")
+}
+autoplay = "transmission"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 121.0
+offset_top = 366.0
+offset_right = 361.0
+offset_bottom = 389.0
+theme_override_colors/font_color = Color(1.01075e-06, 0.681845, 2.69532e-06, 1)
+theme_override_fonts/font = ExtResource("1_lusli")
+text = "Incoming transmission..."

@@ -34,7 +34,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Enemy1" type="CharacterBody2D"]
+[node name="Enemy1" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_x0gkg")
 laser_particle_scene = ExtResource("2_3ifc3")
 
@@ -42,6 +42,8 @@ laser_particle_scene = ExtResource("2_3ifc3")
 shape = SubResource("RectangleShape2D_0tps7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.2, 1, 1, 1)
+self_modulate = Color(0.376471, 1, 1, 1)
 sprite_frames = SubResource("SpriteFrames_wt2wg")
 animation = &"Move"
 

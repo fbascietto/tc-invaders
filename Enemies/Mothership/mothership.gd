@@ -12,7 +12,7 @@ var right_boundary : int
 func _ready() -> void:
 	right_boundary = get_viewport().size.x + 25
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(!dead):
 		move()
 		checkEnd()
@@ -28,6 +28,7 @@ func die() -> void:
 	dead = true
 	Global.update_score(150)
 	sprite_2d.texture = ENEMY_EXPLOSION
+	AudioManager.play_sound(AudioManager.INVADERKILLED)
 	sprite_2d.scale *= 1.5
 	# AudioManager.play_sound(AudioManager.DEATH)
 	death_timer.start()
@@ -36,3 +37,6 @@ func die() -> void:
 
 func getIsDead() -> bool:
 	return dead
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play()
